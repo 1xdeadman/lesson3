@@ -13,12 +13,12 @@ def test_TestClass():
         'qer32tf43g'
     ]
     test_elem = MyTestClass()
+    test_elem_tmp = MyTestClass()
 
     assert "_MyTestClass__value" in dir(test_elem)
     assert type(test_elem._MyTestClass__value) is int
     assert test_elem._MyTestClass__value == 146
-
-    test_elem_tmp = MyTestClass()
+    assert id(test_elem._MyTestClass__value) != id(test_elem_tmp._MyTestClass__value)
 
     assert "main_data" in dir(test_elem)
     assert type(test_elem.main_data) is list
@@ -40,7 +40,6 @@ def test_TestClass():
     assert test_elem._MyTestClass__value == 0
     with pytest.raises(ValueError) as ex:
         tmp = rnd.sample(["sad", True, 3.3, b'asd', list(), dict(), tuple(), set()], 1)[0]
-        print(tmp)
         test_elem.Value = tmp
         test_elem.Value = rnd.randint(-1, -100)
 
