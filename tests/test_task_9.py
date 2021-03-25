@@ -15,14 +15,13 @@ def test_constructor():
 
 @pytest.mark.task_9
 def test_concat():
-    test_elem = YourClass()
 
-    text = ""
-    for i in range(10000):
-        new_value = rnd.randint(1, 10000)
-        text += f"{new_value} "
-        test_elem.data.append(new_value)
+    for step in range(10):
+        test_elem = YourClass()
+        text = ""
+        for i in range(100):
+            new_value = rnd.randint(1, 10000)
+            text += f"{new_value} "
+            test_elem.data.append(new_value)
 
-    text = text[:-1]
-
-    assert test_elem.concat() == text
+        assert test_elem.concat() == text[:-1]
