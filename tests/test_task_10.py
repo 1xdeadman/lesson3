@@ -1,6 +1,6 @@
 import pytest
 import random as rnd
-from tasks.task_10 import MyTestClass
+import tasks.task_10 as task_10
 
 
 @pytest.mark.task_10
@@ -12,8 +12,8 @@ def test_TestClass():
         'ewgvsd',
         'qer32tf43g'
     ]
-    test_elem = MyTestClass()
-    test_elem_tmp = MyTestClass()
+    test_elem = task_10.MyTestClass()
+    test_elem_tmp = task_10.MyTestClass()
 
     assert "_MyTestClass__value" in dir(test_elem)
     assert type(test_elem._MyTestClass__value) is int

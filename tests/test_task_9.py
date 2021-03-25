@@ -1,12 +1,12 @@
 import pytest
 import random as rnd
-from tasks.task_9 import YourClass
+import tasks.task_9 as task_9
 
 
 @pytest.mark.task_9
 def test_constructor():
-    test_elem1 = YourClass()
-    test_elem2 = YourClass()
+    test_elem1 = task_9.YourClass()
+    test_elem2 = task_9.YourClass()
     assert 'data' in dir(test_elem1)
     assert type(test_elem1.data) is list
     assert len(test_elem1.data) == 0
@@ -17,7 +17,7 @@ def test_constructor():
 def test_concat():
 
     for step in range(10):
-        test_elem = YourClass()
+        test_elem = task_9.YourClass()
         text = ""
         for i in range(100):
             new_value = rnd.randint(1, 10000)
