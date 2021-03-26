@@ -18,7 +18,6 @@ def test_TestClass():
     assert "_MyTestClass__value" in dir(test_elem)
     assert type(test_elem._MyTestClass__value) is int
     assert test_elem._MyTestClass__value == 146
-    assert id(test_elem._MyTestClass__value) != id(test_elem_tmp._MyTestClass__value)
 
     assert "main_data" in dir(test_elem)
     assert type(test_elem.main_data) is list
